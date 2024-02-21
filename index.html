@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="index.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Damion&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Damion&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="backgroundImage"></div>
+        <div class="MainContainer">
+            <header class="navbar">
+                <h1 class = "damion-regular">The Email Buddy</h1>
+            </header>
+            <div class="ContentContainer">
+                <div class = "MainPageSloganContainer">
+                    <h2 class = "abeezee-regular">It's not just mail, <br/> It's your <span id="VariableWordSpan"></span></h2>
+                    <h3 class = "abeezee-regular">Coming soon in 2024</h3>
+                </div>
+                <img class = "mainPageLogo" src="DogAndCat.jpg" alt="Dog cat picture">
+            </div>  
+        </div>
+    </body>
+    <script>
+        const wordSet = new Set(['art','message','creation','business','idea','imagination']);
+        const wordColorSet = new Set(['#5856d6','#ff9500','#ff2d55','#5ac8fa','#ffcc00','#007aff']);
+        let i =0;
+
+        window.onload = function() {
+            const word = Array.from(wordSet)[i];
+            const wordColor = Array.from(wordColorSet)[i];
+            i++;
+            var spanElement = document.getElementById("VariableWordSpan");
+            spanElement.textContent= word;
+            spanElement.style.color = wordColor;
+        };
+
+        setInterval(myTimer, 1000);
+        function myTimer() {
+            const word = Array.from(wordSet)[i];
+            const wordColor = Array.from(wordColorSet)[i];
+            i++;
+            var spanElement = document.getElementById("VariableWordSpan");
+            spanElement.textContent=word;
+            spanElement.style.color = wordColor;
+            if (i==wordSet.size) {
+                i=0;
+            }
+        }
+    </script> 
+</html>
+
+
